@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- Declaración de XML. Debe ir al principio obligatoriamente -->
+<!-- DTD → Sirve para declarar la estructura del XML. Actualmente en desuso, reemplazado por XSD 
+<!ELEMENT declara elemento
+<!ATTLIST declara atributo
+
++ → 1 o muchos
+* → 0 o muchos
+
+(elemento1 | elemento2) → Declara que es opcional, o se coloca uno o se coloca otro
+-->
+<!DOCTYPE biblioteca [
+    <!ELEMENT biblioteca (libro+)>
+    <!ATTLIST biblioteca atributo CDATA #REQUIRED>
+    <!ELEMENT libro (titulo, autor, fecha_pub, (precio_dolares | precio_euros))>
+    <!ATTLIST libro id CDATA #REQUIRED>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT fecha_pub (#PCDATA)>
+    <!ELEMENT precio_dolares (#PCDATA)>
+    <!ELEMENT precio_euros (#PCDATA)>
+]>
+<!-- Fin del DTD -->
+
+<biblioteca atributo="esto es un atributo"> <!-- Elemnto raíz. Debe ser único -->
+    <!-- listado de elementos dentro del elemento raiz-->
+    <libro id="1"> <!-- libro es un elemento(complejo) que contiene otros elementos(simples)-->
+        <titulo>1984</titulo> <!-- elemento simple -->
+        <autor>George Orwell</autor>
+        <fecha_pub>1949</fecha_pub>
+        <precio_dolares>25</precio_dolares>
+    </libro>
+    <libro id="2"> <!-- Otro elemento libro -->
+        <titulo>El Principito</titulo>
+        <autor>Saint Exuperi</autor>
+        <fecha_pub>1975</fecha_pub>
+        <precio_euros>20</precio_euros>
+    </libro>
+</biblioteca>

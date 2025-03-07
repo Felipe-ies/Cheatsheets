@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XSD_del_XML.xsd">
+    <libro id="1"> 
+        <titulo>1984</titulo> 
+        <autor>George Orwell</autor>
+        <fecha_pub>1949</fecha_pub>
+        <precio_dolares>25</precio_dolares>
+    </libro>
+    <libro id="2">
+        <titulo>El Principito</titulo>
+        <autor>Saint Exuperi</autor>
+        <fecha_pub>1975</fecha_pub>
+        <precio_euros>20</precio_euros>
+    </libro>
+</biblioteca>
